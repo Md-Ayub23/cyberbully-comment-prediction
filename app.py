@@ -12,7 +12,7 @@ def load_model():
 def predict_message(message, best_model, vectorizer):
     message_tfidf = vectorizer.transform([message])  # Convert input text to TF-IDF
     prediction = best_model.predict(message_tfidf)[0]  # Predict class (0 or 1)
-    return "Cyberbullying" if prediction == 1 else "Safe"
+    return "Offensive Text" if prediction == 1 else "Safe Text"
 
 # Load the trained model and vectorizer
 best_model, vectorizer = load_model()
